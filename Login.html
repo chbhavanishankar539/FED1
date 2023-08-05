@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <title>Login</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .form-container{
+                height:600px;
+                width:500px;
+                position: relative;
+                margin: 30px 20px;
+                background-color: #28292a;
+                display: flex;
+                padding: 20px;
+    }
+    .form{
+        background-color: white;
+        height: 110px;
+        width: 110px;
+        border-radius: 50%;
+        text-align: center;
+        padding-top:8px ;
+    }
+    img{
+        height: 100px;
+        width:100px;
+        border-radius: 50%;
+    }
+    .space{
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        left: 100px;
+        position: relative;
+        transform:rotateY(30deg) rotateZ(5deg);
+    }
+    p{
+        font-size: 40px;
+        color:white;
+    }
+    input[type='text'],input[type='password']{
+        height: 30px;
+        border-style: none;
+        background-color: #28292a;
+        border:0;
+        border-bottom: 3px solid rgb(247, 241, 241);
+        outline: none;
+        color:white;
+    }
+    button{
+        height: 40px;
+        width:60px;
+        border-radius: 12px;
+        background-color: #28292a;
+        border-style: 2px solid;
+        border-color:white;
+        color:white;
+    }
+    input[type='text']:hover,input[type='password']:hover{
+        border:0;
+        border-bottom: 1px solid white;
+        outline: none;
+    }
+     </style>
+     <script>
+        function Check()
+        {  
+            var password=document.getElementById('pass').value;
+            let special=/[!@#$%^&*]/g;
+            let captial=/[A-Z]/g;
+            let small=/[a-z]/g;
+            let num=/[0-9]/g;
+                if(password.length<8){
+                document.getElementById('pass').style.color='red';
+                document.getElementById("myBtn").disabled = true;
+                document.getElementById('demo').innerHTML='enter sufficient password';
+                document.getElementById('pass').style.borderColor='red';
+                }
+                else if(password.match(special)==null){
+                document.getElementById('pass').style.color='red';
+                document.getElementById("myBtn").disabled = true;
+                document.getElementById('demo').innerHTML='enter sufficient password';
+                document.getElementById('pass').style.borderColor='red';
+                }
+                else if(password.match(small)==null){
+                document.getElementById('pass').style.color='red';
+                document.getElementById("myBtn").disabled = true;
+                document.getElementById('demo').innerHTML='enter sufficient password';
+                document.getElementById('pass').style.borderColor='red';
+                }
+               else if(password.match(captial)==null){
+                    document.getElementById('pass').style.color='red';
+                    document.getElementById("myBtn").disabled = true;
+                    document.getElementById('demo').innerHTML='enter sufficient password';
+                    document.getElementById('pass').style.borderColor='red';
+                }
+                else if(password.match(num)==null){
+                    document.getElementById('pass').style.color='red';
+                    document.getElementById("myBtn").disabled = true;
+                    document.getElementById('demo').innerHTML='enter sufficient password';
+                    document.getElementById('pass').style.borderColor='red';
+                }else{
+                    document.getElementById('pass').style.color='white';
+                    document.getElementById("myBtn").disabled = false;
+                    document.getElementById('demo').innerHTML='';
+                    document.getElementById('pass').style.borderColor='white';
+                }       
+        }
+        function check(){
+            var nam=document.getElementById('name').value;
+            let special=/[!@#$%^&*]/g;
+            let captial=/[A-Z]/g;
+            let small=/[a-z]/g;
+            let num=/[0-9]/g;
+            if(nam.length<8){
+                document.getElementById('name').style.color='red';
+                document.getElementById("myBtn").disabled = true;
+                document.getElementById('demo2').innerHTML='enter sufficient username';
+                document.getElementById('name').style.borderColor='red';
+                }
+                else if(nam.match(num)==null){
+                document.getElementById('name').style.color='red';
+                document.getElementById("myBtn").disabled = true;
+                document.getElementById('demo2').innerHTML='enter sufficient username';
+                document.getElementById('name').style.borderColor='red';
+                }
+                else{
+                    document.getElementById('name').style.color='white';
+                    document.getElementById("myBtn").disabled = false;
+                    document.getElementById('demo2').innerHTML='';
+                    document.getElementById('name').style.borderColor='white';
+                }
+        }
+         </script>
+    </head>
+    <body>  <center>
+            <div class="form-container">
+                    <div class="form">
+                            <img src="color.jpg">
+                    </div>
+                    <div class="space">
+                            <p>Login</p>
+                    </div> 
+                <form action='Middle.html'><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <input type="text" placeholder="Username" id="name" onkeyup="check()" required/><br><br>
+                    <p id="demo2" style='color:red;font-size:15px'></p>
+                    <input type="password" placeholder="Password" onkeyup="Check()" id="pass" required/>
+                    <p id="demo"style='color:red;font-size:15px'></p><br><br>
+                    <button class="submit" id="myBtn"onclick="Check()">Login</button><br>
+                </form>
+            </div>
+             </center>
+    </body>
+</html>
