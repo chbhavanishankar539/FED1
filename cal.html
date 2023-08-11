@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>calculator</title>
+        <style>
+            .container{
+                height: 100%;
+                width: 100vh;
+                background: #e3f9ff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .cal{
+                background: #3a4452;
+                padding: 20px;
+                border-radius: 20px;
+            }
+            button{
+                outline: none;
+                border:none;
+                width: 60px;
+                height: 60px;
+                border-radius: 10px;
+                box-shadow:  -7px -7px 14px rgba(225, 225,225,0.1),10px 10px 4px rgba(225, 225,225,0.3);
+                background: transparent;
+                font-size: 20px;
+                margin: 10px;
+                color:white;
+            }
+            input[type="text"]{
+                display: flex;
+                justify-content: flex-end;
+                text-align: right;
+                flex:1;
+                font-size: 30px;
+                box-shadow: none;
+                background: transparent;
+                outline: none;
+                border: none;
+                margin: 30px 0px;
+                color: white;
+            }
+            .b1{
+                color: red;
+            }
+        </style>
+    </head>
+    <body class="container">
+        <div class="cal">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" id="display" >
+                    </td>
+                </tr>
+                <tr>
+                    <td><button onclick="display.value+=')'">)</button></td>
+                    <td> <button onclick="display.value=''">CE</button></td>
+                    <td><button onclick="display.value+='('">(</button></td>
+                    <td><button onclick="display.value=display.value.toString().slice(0,-1)" id="b1">C</button></td>
+            
+                </tr>
+                <tr>
+                    <td><button onclick="display.value+='1'">1</button></td>
+                    <td><button onclick="display.value+='2'">2</button></td>
+                    <td><button onclick="display.value+='3'">3</button></td>
+                    <td><button onclick="display.value+='+'">+</button></td>
+
+                </tr>
+                <tr>
+                    <td><button onclick="display.value+='4'">4</button></td>
+                    <td><button onclick="display.value+='5'">5</button></td>
+                    <td><button onclick="display.value+='6'">6</button></td>
+                    <td><button onclick="display.value+='-'">-</button></td>
+
+                </tr>
+                <tr>
+                    <td><button onclick="display.value+='7'">7</button></td>
+                    <td><button onclick="display.value+='8'">8</button></td>
+                    <td><button onclick="display.value+='9'">9</button></td>
+                    <td><button onclick="display.value+='*'">*</button></td>
+
+                </tr>
+                <tr>
+                    <td><button onclick="display.value+='.'">.</button></td>
+                    <td><button onclick="display.value+='0'">0</button></td>
+                    <td><button onclick="display.value=eval(display.value)">=</button></td>
+                    <td><button onclick="display.value+='/'">/</button></td>
+
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>
